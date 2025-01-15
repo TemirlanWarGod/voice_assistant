@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
-import pyaudio 
+#import pyaudio 
 
 print("1")
 
@@ -31,13 +31,13 @@ print("3")
 def assistant_logic(command):
     command = command.lower()
 
-    if "привет" in command:
+    if 'привет' in command or 'начать работу' in command or 'поработаем' in command:
         speak("Проверка пройдена")
     elif "сколько время" in command:
         from datetime import datetime
         now = datetime.now().strftime("%H:%M")
         speak(f"Сейчас {now}")
-    elif "пока" in command:
+    elif 'пока' in command or 'завершить работу' in command or 'закончили' in command:
         speak("До встречи!")
         exit()
     else:
